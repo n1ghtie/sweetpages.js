@@ -1,0 +1,50 @@
+/*added code starts here*/
+#holder {
+	overflow:hidden;
+	position:relative;
+	margin-right: 0;
+}
+ul, ol{
+	margin:0 25px 0 0;
+}
+
+.swControls{
+	position:absolute;
+	margin-top:-10px;
+}
+a.swShowPage{
+
+	/* The links that initiate the page slide */
+
+	background-color:#444444;
+	float:left;
+	height:15px;
+	margin:4px 3px;
+	text-indent:-9999px;
+	width:15px;
+	/*border:1px solid #ccc;*/
+
+	/* CSS3 rounded corners */
+
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+
+a.swShowPage:hover,
+a.swShowPage.active{
+	background-color:#e60000;
+
+	/*	CSS3 inner shadow */
+
+	-moz-box-shadow:0 0 7px #1e435d inset;
+	/*-webkit-box-shadow:0 0 7px #1e435d inset;*/
+	box-shadow:0 0 7px #1e435d inset;
+}
+#holder li {
+	list-style:none outside none;
+	/*margin:10px 20px 0;*/
+	
+	float:left;
+}
+
