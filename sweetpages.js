@@ -1,4 +1,6 @@
 (function($){
+var currentPage = 0;
+//keep track of current page(for screen rotation purposes)
 
 // Creating the sweetPages jQuery plugin:
 $.fn.sweetPages = function(opts){
@@ -23,6 +25,7 @@ $.fn.sweetPages = function(opts){
 
 	// Calculating the total number of pages:
 	var pagesNumber = Math.ceil(li.length/resultsPerPage);
+	
 
 	// If the pages are less than two, do nothing:
 	if(pagesNumber<2) return this;
@@ -79,18 +82,28 @@ $.fn.sweetPages = function(opts){
 		$(this).addClass('active').siblings().removeClass('active');
 
 		swSlider.stop().animate({'margin-left': -(parseInt($(this).text())-1)*ul.width()},'slow');
+		
+		//event handler
 		e.preventDefault();
+		
+		//get current page number back
+		currentPage = $(this).text();
 	});
 
-	// Mark the first link as active the first time the code runs:
-	hyperLinks.eq(0).addClass('active');
-
+	if (currentPage) {
+		// Mark the current page you are on as active
+		hyperLinks.eq(currentPage-1).addClass('active');
+	} else {
+	
+		// Mark the first link as active the first time the code runs:
+		hyperLinks.eq(0).addClass('active');
+	}
 	// Center the control div:
 	swControls.css({
 		'left':'50%',
 		'margin-left':-swControls.width()/2
 	});
-
+	//return an object
 	return this;
 
 }})(jQuery);
@@ -107,7 +120,7 @@ $(document).ready(function(){
 		// split text till word (split) appears and store all of text segments in array
 		var splitedArr = fulltext.split("(split)");
 		/*
-			Create nested structre to #Main<#holder<li,li,li..
+			Create nested structre #Main<#holder<li,li,li..
 		*/
 			$("div.post_content").html("<div id='main'></div>");
 			$("div#main").html("<ul id='holder'></ul>");
@@ -122,39 +135,17 @@ $(document).ready(function(){
 	
 	/*
 		For mobile devices, so that they respond to a rotation
+		No need get int value, just to react when screen is rotated
 	*/
 	$(window).bind('orientationchange', function(e) {
-
-		switch ( window.orientation ) { 
-			//portait mode
-			case 0:
-				splittext();
-				sweetPagesLoad();
-				break;
-			//Landscape orientation with the screen turned clockwise
-			case 90:
-				splittext();
-				sweetPagesLoad();
-				break;
-			//Landscape orientation with the screen turned counterclockwise.
-			case -90:
-		 		splittext();
-		 		sweetPagesLoad();
-		 		break;
-		 	//Portrait orientation with the screen turned upside down. This value is currently not supported on iPhone.
-		 	case 180:
-		 		splittext();
-		 		sweetPagesLoad();
-		 		break;
-		 }
+		splittext();
+		sweetPagesLoad();
 	});
+	
 	var sweetPagesLoad = function(){
 		$('#holder').sweetPages({perPage:1});
 		var controls = $('.swControls').detach();
 		controls.appendTo('#main');
 	};
-sweetPagesLoad();
-
+	sweetPagesLoad();
 });
-
-
