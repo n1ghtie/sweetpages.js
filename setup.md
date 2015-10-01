@@ -8,5 +8,5 @@
 <pre><code>&lt;body onorientationchange="updateOrientation()"&gt;</code></pre>
 ---SETUP END---
 
-
-<code><p>Follow the link : http://andrejsgubars.co.uk/test/vestibulum-ante-ipsum-primis/bmw-i8-spyder-concept/</p></code>
+[id]: http://andrejsgubars.co.uk/test/vestibulum-ante-ipsum-primis/bmw-i8-spyder-concept/
+	"DEMO"
