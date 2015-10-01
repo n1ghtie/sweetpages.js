@@ -1,7 +1,7 @@
 ---SETUP START---<br>
 
 1) Include a link to a script in footer like this<br>
-		<pre><code><script type="text/javascript" src="/src/to/your/script/sweetpages.js"></script></code></pre>
+<pre><code>&lt;script type="text/javascript" src="/src/to/your/script/sweetpages.js"&lt;&gt/script&lt;</code></pre>
  <br>
 2) Add the CSS rules to your excisting CSS, do not overrite you main rules. Create, minify a separate file and include it in head like this
 <br>
