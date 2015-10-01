@@ -6,11 +6,7 @@
 <pre><code>&lt;link rel="stylesheet" type="text/css" (media="all") href,src="/src/to/your/css/custom.css"&gt;</code></pre>
 3) Add a window rotation listener, add a custom attribute so your body tag will look like this
 <pre><code>&lt;body onorientationchange="updateOrientation()"&gt;</code></pre>
-
 ---SETUP END---
 
----DEMO---
-<br>
-Follow the link : http://andrejsgubars.co.uk/test/vestibulum-ante-ipsum-primis/bmw-i8-spyder-concept/
-<br>
----END---
+
+<code><p>Follow the link : http://andrejsgubars.co.uk/test/vestibulum-ante-ipsum-primis/bmw-i8-spyder-concept/</p></code>
