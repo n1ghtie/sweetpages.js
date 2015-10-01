@@ -9,7 +9,7 @@
 <br>
 3) Add a window rotation listener, add a custom attribute so your body tag will look like this
 <pre><code>&lt;body onorientationchange="updateOrientation()"&gt;</code></pre>
-	<br>
+<br>
 ---SETUP END---
 
 ---DEMO---
